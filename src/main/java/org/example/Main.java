@@ -8,6 +8,12 @@ import java.io.File;
 import java.util.ArrayList;
 
 public class Main {
+    public static void main(String[] args) throws LifecycleException {
+        Tomcat app = getApp(8090);
+        app.start();
+        app.getServer().await();
+    }
+
     public static Tomcat getApp(int port) {
         Tomcat app = new Tomcat();
         app.setPort(port);
@@ -18,11 +24,5 @@ public class Main {
         ctx.addServletMappingDecoded("/users/", MainServlet.class.getSimpleName());
 
         return app;
-    }
-
-    public static void main(String[] args) throws LifecycleException {
-        Tomcat app = getApp(8090);
-        app.start();
-        app.getServer().await();
     }
 }
