@@ -26,7 +26,6 @@ task copyToLib(type: Copy) {
 task stage(dependsOn: ['clean', 'installDist'])
 installDist.mustRunAfter clean
 
-
 jar {
     manifest {
         attributes(
