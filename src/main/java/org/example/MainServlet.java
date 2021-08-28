@@ -13,7 +13,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-@WebServlet("/users/")
 public class MainServlet extends HttpServlet {
     private List<User> users;
     private int idCounter;
