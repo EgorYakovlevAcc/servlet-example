@@ -25,3 +25,12 @@ task copyToLib(type: Copy) {
 
 task stage(dependsOn: ['clean', 'installDist'])
 installDist.mustRunAfter clean
+
+jar {
+    manifest {
+        attributes(
+                'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
+                'Main-Class': 'org.example.Main'
+        )
+    }
+}
