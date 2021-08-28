@@ -9,9 +9,17 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) throws LifecycleException {
-        Tomcat app = getApp(8090);
+        Tomcat app = getApp(getPort());
         app.start();
         app.getServer().await();
+    }
+
+    private static int getPort() {
+        String port = System.getenv("PORT");
+        if (port != null) {
+            return Integer.valueOf(port);
+        }
+        return 8090;
     }
 
     public static Tomcat getApp(int port) {
