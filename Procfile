@@ -1,1 +1,1 @@
-java -Dserver.port=$PORT $JAVA_OPTS -jar build/libs/*.jar
+web: java -jar build/libs/servlet-example-1.0-SNAPSHOT.jar

@@ -23,7 +23,5 @@ task copyToLib(type: Copy) {
     from(configurations.compile)
 }
 
-stage.dependsOn(copyToLib)
-
 task stage(dependsOn: ['clean', 'installDist'])
 installDist.mustRunAfter clean
