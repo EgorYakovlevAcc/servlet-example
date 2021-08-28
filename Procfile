@@ -1,1 +1,1 @@
-web: sh build/install/deploy/bin/deploy
+web: java -jar build/libs/servlet-example-1.0-SNAPSHOT.war
