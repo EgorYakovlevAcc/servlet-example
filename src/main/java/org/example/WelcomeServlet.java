@@ -14,6 +14,21 @@ public class WelcomeServlet extends HttpServlet {
             throws IOException {
 
         PrintWriter out = response.getWriter();
-        out.println("Hello, application!");
+        // simple one
+//                out.println("Hello, application!");
+
+        // more complex
+//        out.write("<html><body><h1>Hello, world!</h1></body></html>");
+//
+        // more more complex
+        out.write("<html>" +
+                "<head>" +
+                "<title>Hello page</title>" +
+                "</head>" +
+                "<body>" +
+                "<h1>Main page</h1>" +
+                "<a href='/users/'>my link</a>"+
+                "</body>" +
+                "</html>");
     }
 }

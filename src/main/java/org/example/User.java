@@ -4,16 +4,15 @@ import java.util.Date;
 
 public class User {
     private Integer id;
-    private String name;
     private Date birthdate;
-    private String lastname;
+    private String password;
+    private String login;
 
-    public String getLastname() {
-        return lastname;
-    }
-
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
+    public User(Integer id, Date birthdate, String password, String login) {
+        this.id = id;
+        this.birthdate = birthdate;
+        this.password = password;
+        this.login = login;
     }
 
     public Integer getId() {
@@ -24,14 +23,6 @@ public class User {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public Date getBirthdate() {
         return birthdate;
     }
@@ -40,12 +31,19 @@ public class User {
         this.birthdate = birthdate;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", birthdate=" + birthdate +
-                '}';
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
     }
 }

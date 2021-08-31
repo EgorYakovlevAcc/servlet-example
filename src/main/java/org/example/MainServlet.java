@@ -40,17 +40,17 @@ public class MainServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        // user creation before validation
-        User user = new User();
-        user.setName(req.getParameter("name"));
-        user.setId(getId());
-        String date = req.getParameter("date");
-        user.setBirthdate(getDate(date));
-
-        this.users.add(user);
-
-        PrintWriter pw = resp.getWriter();
-        pw.write("User " + user.getName() + " has been created successfully.");
+//        // user creation before validation
+//        User user = new User();
+//        user.setName(req.getParameter("name"));
+//        user.setId(getId());
+//        String date = req.getParameter("date");
+//        user.setBirthdate(getDate(date));
+//
+//        this.users.add(user);
+//
+//        PrintWriter pw = resp.getWriter();
+//        pw.write("User " + user.getName() + " has been created successfully.");
     }
 
     private Date getDate(String date) {
