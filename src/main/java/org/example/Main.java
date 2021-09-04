@@ -19,7 +19,7 @@ public class Main {
         if (port != null) {
             return Integer.valueOf(port);
         }
-        return 8090;
+        return 8091;
     }
 
     public static Tomcat getApp(int port) {
@@ -27,7 +27,7 @@ public class Main {
         Tomcat app = new Tomcat();
         app.setPort(port);
 
-        Context ctx = app.addContext("", new File(".").getAbsolutePath());
+        Context ctx = app.addWebapp("", new File("src/main/webapp").getAbsolutePath());
 
         app.addServlet(ctx, WelcomeServlet.class.getSimpleName(), new WelcomeServlet());
         ctx.addServletMappingDecoded("", WelcomeServlet.class.getSimpleName());
