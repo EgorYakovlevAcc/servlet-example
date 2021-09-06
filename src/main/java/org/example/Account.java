@@ -1,14 +1,18 @@
 package org.example;
 
 import java.util.Date;
+import java.util.Objects;
 
-public class User {
+public class Account {
     private Integer id;
     private Date birthdate;
     private String password;
     private String login;
 
-    public User(Integer id, Date birthdate, String password, String login) {
+    public Account() {
+    }
+
+    public Account(Integer id, Date birthdate, String password, String login) {
         this.id = id;
         this.birthdate = birthdate;
         this.password = password;
@@ -55,5 +59,18 @@ public class User {
                 ", password='" + password + '\'' +
                 ", login='" + login + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Account)) return false;
+        Account account = (Account) o;
+        return Objects.equals(getId(), account.getId());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId());
     }
 }
