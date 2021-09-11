@@ -39,9 +39,15 @@ public class AccountServlet extends HttpServlet {
     }
 
     private void updateAccount(Account account, Account inputAccount) {
-        account.setLogin(inputAccount.getLogin());
-        account.setBirthdate(inputAccount.getBirthdate());
-        account.setPassword(inputAccount.getPassword());
+        if (inputAccount.getLogin() != null) {
+            account.setLogin(inputAccount.getLogin());
+        }
+        if (inputAccount.getBirthdate() != null) {
+            account.setBirthdate(inputAccount.getBirthdate());
+        }
+        if (inputAccount.getPassword() != null) {
+            account.setPassword(inputAccount.getPassword());
+        }
     }
 
     private Account getAccountById(Integer id) {
@@ -64,6 +70,8 @@ public class AccountServlet extends HttpServlet {
         this.accounts.remove(account);
     }
 
+    // String s = "I love Moscow";
+    // s.split(" "); -> {"I", "love", "Moscow"}
     private Integer getAccountIdFromPath(HttpServletRequest req) {
         String path = req.getPathInfo();
         String[] pathVariables = path.split("/");

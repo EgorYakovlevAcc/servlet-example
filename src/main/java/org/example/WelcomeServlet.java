@@ -14,7 +14,7 @@ public class WelcomeServlet extends HttpServlet {
                       HttpServletResponse response)
             throws IOException, ServletException {
 
-        RequestDispatcher view = request.getRequestDispatcher("index.jsp");
+        RequestDispatcher view = request.getRequestDispatcher("welcome.jsp");
         view.forward(request, response);
     }
 }
