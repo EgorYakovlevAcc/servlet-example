@@ -5,7 +5,6 @@ import org.apache.catalina.LifecycleException;
 import org.apache.catalina.startup.Tomcat;
 
 import java.io.File;
-import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) throws LifecycleException {
@@ -34,6 +33,9 @@ public class Main {
 
         app.addServlet(ctx, AccountServlet.class.getSimpleName(), new AccountServlet());
         ctx.addServletMappingDecoded("/accounts/*", AccountServlet.class.getSimpleName());
+
+        app.addServlet(ctx, GoodsServlet.class.getSimpleName(), new GoodsServlet());
+        ctx.addServletMappingDecoded("/goods/*", GoodsServlet.class.getSimpleName());
 
         return app;
     }
